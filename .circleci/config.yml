@@ -4,8 +4,7 @@ version: 2.1
 
 jobs:
   build-openwrt:
-    machine:
-      image: ubuntu-latest
+    machine: true
 
     environment:
       - REPO_URL: https://github.com/MuTong233/lede
