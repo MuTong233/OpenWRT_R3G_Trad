@@ -4,7 +4,9 @@ version: 2.1
 
 jobs:
   build-openwrt:
-    machine: true
+    machine:
+      image: circleci/classic:latest
+    resource_class: medium+
 
     environment:
       - REPO_URL: https://github.com/MuTong233/lede
