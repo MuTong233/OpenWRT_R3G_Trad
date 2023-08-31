@@ -1,17 +1,15 @@
 # Use the latest 2.1 version of CircleCI pipeline process engine.
 # See: https://circleci.com/docs/configuration-reference
-version: 2.0
+version: 2.1
 
 jobs:
-  build_openwrt:
+  build-openwrt:
     machine:
       image: ubuntu-latest
 
     environment:
       - REPO_URL: https://github.com/MuTong233/lede
       - REPO_BRANCH: master
-      - FEEDS_CONF: feeds.conf.default
-      - CONFIG_FILE: .config
       - TZ: Asia/Shanghai
 
     working_directory: ~/
@@ -97,11 +95,6 @@ jobs:
           path: lede/bin/targets/
 
 workflows:
-  version: 2
-  main:
+  build-openwrt:
     jobs:
-      - build_openwrt:
-          filters:
-            branches:
-              only: 
-                - ramips-deploy
+      - build-openwrt
