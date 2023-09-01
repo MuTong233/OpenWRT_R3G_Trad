@@ -70,6 +70,7 @@ jobs:
           no_output_timeout: 60m
           command: |
             cd lede/
+            wget https://raw.githubusercontent.com/MuTong233/OpenWRT_R3G_Trad/main/xray-core/Makefile feeds/small/xray-core/Makefile
             wget https://github.com/MuTong233/OpenWRT_R3G_Trad/raw/main/.config
 
       - run:
